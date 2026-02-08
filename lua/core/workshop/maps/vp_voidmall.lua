@@ -1,0 +1,1 @@
+return "vp_pinkplace_v2"

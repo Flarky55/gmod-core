@@ -1,0 +1,3 @@
+local CURRENCY = {
+    Symbol = "₪"
+}

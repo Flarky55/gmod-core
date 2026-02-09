@@ -40,6 +40,7 @@ do
 
         "cl_camera.lua",
         "cl_spawnlist.lua",
+        "cl_settings.lua",
         "cl_localization_stub.lua",
         
     } )

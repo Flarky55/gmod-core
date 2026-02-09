@@ -24,10 +24,11 @@ local Links = {
         DoClick = function()
             steamworks.ViewFile( "3489704871" )
         end,
+        Enabled = false,
     },
     {
         Name = "#core.scoreboard.links.github",
-        URL = "https://github.com/Flarky55/",
+        URL = "https://github.com/Flarky55/gmod-core",
     }
 }
 
@@ -469,10 +470,10 @@ local SCORE_BOARD = {
                 button:DockMargin( 0, 0, 4, 0 )
                 button:SetFont( FONT_Comfortaa24 )
                 button:SetText( entry.Name )
-                button:SetEnabled( false )
+                button:SetEnabled( entry.Enabled == nil or entry.Enabled )
                 button:SizeToContentsX( 2 )
                 button:SizeToContentsY()
-                button.DoClick = entry.DoClick or function( s )
+                button.DoClick = entry.DoClick or function()
                     gui.OpenURL( entry.URL )
                 end
             end

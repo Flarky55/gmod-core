@@ -1,6 +1,7 @@
 local MODE = {
     Name    = "PvP",
-    Color   = Color(231, 76, 60)
+    Color   = Color(231, 76, 60),
+    NoClip  = false,
 }
 
 if SERVER then

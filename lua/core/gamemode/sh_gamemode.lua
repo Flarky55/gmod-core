@@ -105,3 +105,11 @@ if SERVER then
         end
     end )
 end
+
+hook.Add( "PlayerNoClip", "core.gamemode", function( ply, desiredState )
+    if desiredState == false then return end
+
+    local gm = GetGamemode( ply )
+
+    return gm.NoClip ~= false
+end, PRE_HOOK_RETURN )

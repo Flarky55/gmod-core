@@ -22,26 +22,6 @@ TOOL.Information = {
     { name = "reload" }, -- Clear selection
 }
 
-if CLIENT then
-    -- language.Add tool
-    local function lat(name, value)
-        language.Add("tool.neoweld."..name, value)
-        --print("lat", name)
-    end
-
-    lat("name", "NeoWeld")
-    lat("desc", "Weld multiple objects at once, optimally")
-    lat("left", "Select or deselect objects")
-    lat("left_use", "Select objects in range")
-    lat("right", "Weld selected objects to each other")
-    lat("right_use", "Weld selected objects to world")
-    lat("reload", "Clear selection")
-
-    lat("do_weld", "Weld props")
-    lat("do_nocollide", "No-collide props")
-    lat("select_radius", "Multi-select radius")
-    lat("bound_scale", "Scale for pair detection")
-end
 
 function TOOL.BuildCPanel(form)
     local locprefix = "#tool.neoweld."

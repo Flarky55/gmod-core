@@ -1,5 +1,26 @@
 util.ParseProperties([[
+// Spawnemnu
 spawnemnu.category.core=C.O.R.E.
+
+// Tool - NeoWeld
+tool.neoweld.name=NeoWeld
+tool.neoweld.desc=Сваривает несколько объектов за раз, оптимально
+tool.neoweld.left=Выделить объекты
+tool.neoweld.left_use=Выделить объекты в радиусе
+tool.neoweld.right=Сварить выделенные объекты друг с другом
+tool.neoweld.right_use=Сварить выделенные объекты с миром
+tool.neoweld.reload=Снять выделение
+
+tool.neoweld.do_weld=Сварить
+tool.neoweld.do_nocollide=Отключить столкновение
+tool.neoweld.select_radius=Радиус выделения
+tool.neoweld.bound_scale=Масштаб определения пары
+
+// Tool - Unbreakable
+tool.unbreakable.name=Неразрушимость
+tool.unbreakable.desc=Сделать объект неразрушаемым
+tool.unbreakable.left=Сделать неразрушаемым
+tool.unbreakable.reload=Восстановить прежнее состояние
 
 // Scoreboard
 core.scoreboard.links.addons=Аддоны

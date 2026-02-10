@@ -1,4 +1,4 @@
-require( "api/ipapi" )
+require( "webapi/ipapi" )
 
 local GetClass = FindMetaTable( "Entity" ).GetClass
 
@@ -40,7 +40,7 @@ list.Set( "ServerLogs", "player_connect", function( fnLog, data )
     local address = data.address
 
     -- https://www.youtube.com/watch?v=QYyMLXq_SSo
-    ipapi.GetAll( string.match( data.address, "(.+):" ), 
+    webapi.ipapi.GetAll( string.match( data.address, "(.+):" ), 
         function( result )
             fnLog( ServerLog_FormatPlayerString( name, userid, networkid ) .. " connected, address \"" .. address .. "\" (" .. result.city .. ", " .. result.country .. ")"  )
         end, 

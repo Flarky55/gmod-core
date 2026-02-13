@@ -4,14 +4,20 @@ local ARGUMENT_NICKNAME = { default = "garry :D", hint = "nickname" }
 sam.command.set_category( "C.O.R.E." )
 
 sam.command.new( "build" )
+    :Aliases( "билд" )
+    :DisallowConsole()
     :Help( "Перейти в режим Build." )
+    
     :OnExecute( function( ply )
         ply:SetGamemode( CORE_GAMEMODE_BUILD )
     end )
 :End()
 
 sam.command.new( "pvp" )
+    :Aliases( "пвп" )
+    :DisallowConsole()
     :Help( "Перейти в режим PvP." )
+    
     :OnExecute( function( ply )
         ply:SetGamemode( CORE_GAMEMODE_PVP )
     end )
@@ -21,7 +27,10 @@ sam.command.new( "nick" )
     :Aliases( "setnick", "name", "setname" )
     :DisallowConsole()
     :Help( "Изменить свой никнейм." )
+    
     :AddArg( "text", ARGUMENT_NICKNAME )
+    :GetRestArgs()
+    
     :OnExecute( function( ply, nick ) 
         ply:SetFakeNick( nick )
     end )
@@ -33,7 +42,10 @@ sam.command.new( "persistentnick" )
         "Установить постоянный никнейм.\n" .. 
         "Этот никнейм будет отображаться при подключении и автоматически устанавливаться после захода на сервер." 
     )
+    
     :AddArg( "text", ARGUMENT_NICKNAME )
+    :GetRestArgs()
+
     :OnExecute( function( ply, nick )
         ply:SetPersistentNick( nick )
         ply:SetFakeNick( nick )
@@ -48,6 +60,7 @@ sam.command.new( "forcenick" )
 
     :AddArg( "player" )
     :AddArg( "text", ARGUMENT_NICKNAME )
+    :GetRestArgs()
 
     :OnExecute( function( ply, targets, nick )
         for _, target in ipairs( targets ) do

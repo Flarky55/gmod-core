@@ -47,7 +47,7 @@ list.Set( "ServerLogs", "player_connect", function( fnLog, data )
         function( err )
             ErrorNoHalt( string.format( "ServerLog: failed to fetch '%s' data: %s", address, err ), "\n" )
         
-            fnLog( ServerLog_FormatPlayerString( name, userid, networkid ) .. " connected, address \"" .. address .. "\"", true )
+            fnLog( ServerLog_FormatPlayerString( name, userid, networkid ) .. " connected, address \"" .. address .. "\"", false )
         end 
     )
 end )
@@ -59,5 +59,5 @@ list.Set( "ServerLogs", "player_disconnect", function( _, data )
     local name, userid, networkid = data.name, data.userid, data.networkid
     local reason = data.reason
     
-    return ServerLog_FormatPlayerString( name, userid, networkid ) .. " disconnected (reason \"" .. reason .. "\")", true
+    return ServerLog_FormatPlayerString( name, userid, networkid ) .. " disconnected (reason \"" .. reason .. "\")", false
 end )

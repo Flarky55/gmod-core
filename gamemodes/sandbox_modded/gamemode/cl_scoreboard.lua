@@ -178,6 +178,7 @@ local PLAYER_LINE = {
         self:Dock( TOP )
         self:SetTall( Scale(32) )
         self:DockPadding( 1, 1, 1, 1 )
+        self:DockMargin( 0, 0, 0, 4 )
 
 
         local avatar = self:Add( "AvatarImage" )

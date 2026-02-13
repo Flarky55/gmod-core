@@ -3,7 +3,8 @@ TOOL.Category = "Construction"
 
 TOOL.Information = {
     { name = "left" },
-    { name = "reload" }
+    { name = "right" },
+    { name = "reload" },
 }
 
 
@@ -22,14 +23,19 @@ end
 local SetUnbreakable
 if SERVER then
     SetUnbreakable = function( ent, state )
-        ent:SetVar( "unbreakable", state )
-
-        duplicator.StoreEntityModifier( ent, "unbreakable", { state } )
+        if state then
+            ent:SetVar( "unbreakable", state )
+            duplicator.StoreEntityModifier( ent, "Unbreakable", { state } )
+        else
+            ent:SetVar( "unbreakable", nil )
+            duplicator.ClearEntityModifier( ent, "Unbreakable" )
+        end
     end
 
-    duplicator.RegisterEntityModifier( "unbreakable", function( ply, ent, data )
+    duplicator.RegisterEntityModifier( "Unbreakable", function( ply, ent, data )
         SetUnbreakable( ent, data[1] )
     end )
+
 
     hook.Add( "EntityTakeDamage", "Unbreakable", function( ent, dmgInfo )
         if ent:GetVar( "unbreakable", false ) then return true end
@@ -44,6 +50,21 @@ function TOOL:LeftClick( trace )
     then return false end
 
     if SERVER then SetUnbreakable( ent, true ) end
+
+    return true
+end
+
+function TOOL:RightClick( trace )
+    local ent = trace.Entity
+    if not IsValid( ent ) then return false end
+
+    if SERVER then
+        for _, e in ipairs( constraint.GetAllConstrainedEntities( ent ) ) do
+            if not CanBeUnbreakable( e ) then continue end
+
+            SetUnbreakable( e, true )
+        end
+    end
 
     return true
 end

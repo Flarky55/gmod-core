@@ -86,6 +86,7 @@ end )
 local function CanTakeDamage( ply, attacker )
     local gm = GetGamemode( ply )
     local CanTakeDamage = gm.CanTakeDamage
+    if CanTakeDamage == nil then return true end
 
     return CanTakeDamage( ply, attacker )
 end

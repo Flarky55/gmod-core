@@ -42,6 +42,7 @@ META_PLAYER.GetGamemode = GetGamemode
 local function IsInGamemode( ply, id )
     return GetGamemodeId( ply ) == id
 end
+META_PLAYER.IsInGamemode = IsInGamemode
 
 if SERVER then
     local function SetGamemodeId( ply, id )

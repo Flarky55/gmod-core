@@ -13,6 +13,14 @@ local function PlayerSpawnedEntity( _, ply, ent )
     return ServerLog_FormatPlayer( ply ) .. " spawned " .. GetClass( ent )
 end
 
+local function PlayerSpawnedVehicle( _, ply, ent )
+    -- Glide vehicles are SENTs, but Glide also calls "PlayerSpawnedVehicle", so the log is repeated twice
+    --  https://github.com/StyledStrike/gmod-glide/blob/dc0168bcef524fd47e4095de6a9c4fc89b0fada6/lua/glide/server/events.lua#L256-L263
+    if ent.IsGlideVehicle then return end
+
+    return PlayerSpawnedEntity( _, ply, ent )
+end
+
 list.Set( "ServerLogs", "PlayerSpawnedEffect",  PlayerSpawnedString )
 list.Set( "ServerLogs", "PlayerSpawnedProp",    PlayerSpawnedString )
 list.Set( "ServerLogs", "PlayerSpawnedRagdoll", PlayerSpawnedString )
@@ -20,12 +28,11 @@ list.Set( "ServerLogs", "PlayerSpawnedRagdoll", PlayerSpawnedString )
 list.Set( "ServerLogs", "PlayerSpawnedNPC",     PlayerSpawnedEntity )
 list.Set( "ServerLogs", "PlayerSpawnedSENT",    PlayerSpawnedEntity )
 list.Set( "ServerLogs", "PlayerSpawnedSWEP",    PlayerSpawnedEntity )
-list.Set( "ServerLogs", "PlayerSpawnedVehicle", PlayerSpawnedEntity )
+list.Set( "ServerLogs", "PlayerSpawnedVehicle", PlayerSpawnedVehicle )
 
 list.Set( "ServerLogs", "PlayerGiveSWEP", function( _, ply, class )
     return ServerLog_FormatPlayer( ply ) .. " gave himself " .. class
 end )
-
 
 list.Set( "ServerLogs", "CanTool", function( _, ply, _, toolname )
     return ServerLog_FormatPlayer( ply ) .. " attempts to use " .. toolname

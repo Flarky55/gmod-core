@@ -18,9 +18,10 @@ tool.neoweld.bound_scale=Масштаб определения пары
 
 // Tool - Unbreakable
 tool.unbreakable.name=Неразрушимость
-tool.unbreakable.desc=Сделать объект неразрушаемым
-tool.unbreakable.left=Сделать неразрушаемым
-tool.unbreakable.reload=Восстановить прежнее состояние
+tool.unbreakable.desc=Делает объекты неразрушаемыми
+tool.unbreakable.left=Сделать объект неразрушаемым
+tool.unbreakable.right=Восстановить прежнее состояние объекта
+tool.unbreakable.reload=Сделать объект и все объекты, что с ним связаны, неразрушаемыми
 
 // Scoreboard
 core.scoreboard.links.addons=Аддоны
@@ -77,9 +78,9 @@ tool.boxmarker.tint_color=Tint Color
 tool.boxmarker.error=Boxes cannot overlap each other!
 
 
-custom_chat.local.default=Рядом
-custom_chat.local.yell=Крик
-custom_chat.local.whisper=Шёпот
+custom_chat.proximity.default=Рядом
+custom_chat.proximity.yell=Крик
+custom_chat.proximity.whisper=Шёпот
 
 
 spawnmenu.utilities.paperwork=PaperWork

@@ -72,17 +72,17 @@ end)
 
 
 do
-    local cooldown = {
-        ["votemap"] = 60 * 5, -- 5m
-        ["voteclear"] = 60 * 30, -- 30m
-    }
+    -- local cooldown = {
+    --     ["votemap"] = 60 * 5, -- 5m
+    --     ["voteclear"] = 60 * 30, -- 30m
+    -- }
     
-    hook.Add("SAM.RanCommand", "SAM.CONRED.Restrictions", function(_, _, _, cmd)
-        local cmd_name = cmd.name
+    -- hook.Add("SAM.RanCommand", "SAM.CONRED.Restrictions", function(_, _, _, cmd)
+    --     local cmd_name = cmd.name
         
-        local time = cooldown[cmd_name]
-        if time == nil then return end
+    --     local time = cooldown[cmd_name]
+    --     if time == nil then return end
         
-        Restrictions[cmd_name]._NextCommand = CurTime() + time
-    end) 
+    --     Restrictions[cmd_name]._NextCommand = CurTime() + time
+    -- end) 
 end

@@ -23,6 +23,20 @@ tool.unbreakable.left=Сделать объект неразрушаемым
 tool.unbreakable.right=Восстановить прежнее состояние объекта
 tool.unbreakable.reload=Сделать объект и все объекты, что с ним связаны, неразрушаемыми
 
+// Settings
+core.settings.category.misc=Разное
+core.settings.category.smooth_noclip=Плавный ноуклип
+core.settings.category.mute_toolgun=Тихий тулган
+
+core.settings.enabled=Включено
+
+core.settings.cl_thirdperson_enable=Третье лицо
+core.settings.performantrender_enable=Производительный рендер
+core.settings.cl_autojump=Авто-прыжок
+core.settings.smooth_noclip_crouch_default=Обычное поведение присяда
+core.settings.cl_toolgun_sound=Звук
+core.settings.cl_toolgun_effects=Эффект
+
 // Scoreboard
 core.scoreboard.links.addons=Аддоны
 core.scoreboard.links.github=GitHub

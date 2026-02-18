@@ -3,20 +3,22 @@ local function PopulateToolMenu()
 
     local Settings = {
         {
-            Name = "#core.settings.category.thirdperson",
+            Name = "#core.settings.category.misc",
             {
-                Name = "#core.settings.enabled",
+                Name = "#core.settings.cl_thirdperson_enable",
                 ConVar = "cl_thirdperson_enable",
                 Init = DForm.CheckBox
             },
-        },
-        {
-            Name = "#core.settings.category.performant_render",
             {
-                Name = "#core.settings.enabled",
+                Name = "#core.settings.performantrender_enable",
                 ConVar = "performantrender_enable",
                 Init = DForm.CheckBox
             },
+            {
+                Name = "#core.settings.cl_autojump",
+                ConVar = "cl_autojump",
+                Init = DForm.CheckBox
+            }
         },
         {
             Name = "#core.settings.category.smooth_noclip",

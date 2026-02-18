@@ -11,6 +11,7 @@ local function PopulateToolMenu()
             },
             {
                 Name = "#core.settings.performantrender_enable",
+                Help = "#core.settings.performantrender_enable.help",
                 ConVar = "performantrender_enable",
                 Init = DForm.CheckBox
             },
@@ -58,6 +59,8 @@ local function PopulateToolMenu()
 
             for _, setting in ipairs( entry ) do
                 setting.Init( form, setting.Name, setting.ConVar )
+
+                if setting.Help then cpanel:ControlHelp( setting.Help ) end
             end
         end
     end )

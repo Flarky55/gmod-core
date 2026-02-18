@@ -32,6 +32,7 @@ core.settings.enabled=Включено
 
 core.settings.cl_thirdperson_enable=Третье лицо
 core.settings.performantrender_enable=Производительный рендер
+core.settings.performantrender_enable.help=Рендерит объекты, видимые только в поле зрения игрока.\nБывает нестабильным при большом количестве энтити и низком FPS. Если наблюдаются значительные проблемы с отрисовкой - рекомендуется оставить отключенным.
 core.settings.cl_autojump=Авто-прыжок
 core.settings.smooth_noclip_crouch_default=Обычное поведение присяда
 core.settings.cl_toolgun_sound=Звук

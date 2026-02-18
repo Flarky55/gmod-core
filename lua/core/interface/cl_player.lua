@@ -6,8 +6,8 @@ local META_ANGLE    = FindMetaTable( "Angle" )
 local STUDIO_RENDER = STUDIO_RENDER
 
 local Nick, EngineNick, GetGamemode = META_PLAYER.Nick, META_PLAYER.EngineNick, META_PLAYER.GetGamemode
-local GetPos, GetModel, LookupAttachment, GetAttachment = META_ENTITY.GetPos, META_ENTITY.GetModel, META_ENTITY.LookupAttachment, META_ENTITY.GetAttachment
-local Add, DistToSqr = META_VECTOR.Add, META_VECTOR.DistToSqr
+local GetPos, GetModel, GetModelScale, LookupAttachment, GetAttachment = META_ENTITY.GetPos, META_ENTITY.GetModel, META_ENTITY.GetModelScale, META_ENTITY.LookupAttachment, META_ENTITY.GetAttachment
+local Add, Mul, DistToSqr = META_VECTOR.Add, META_VECTOR.Mul, META_VECTOR.DistToSqr
 local Forward, Right, RotateAroundAxis = META_ANGLE.Forward, META_ANGLE.Right, META_ANGLE.RotateAroundAxis
 
 local band = bit.band
@@ -72,13 +72,15 @@ hook.Add( "PostPlayerDraw", "core.ui.3d2d.player", function( ply, flags )
     local distance = CHECK_DISTANCE and DistToSqr( GetPos( ply ), EyePos() )
     if distance and distance > DISTANCE_SQUARED then return end
 
+    local scale = GetModelScale( ply )
+
     local nick, nick_engine = Nick( ply ), EngineNick( ply )
     local gm = GetGamemode( ply )
 
 
     local pos, ang; do
         pos = AttachmentHeadPos( ply )
-        Add( pos, V_HEAD_OFFSET )
+        Add( pos, V_HEAD_OFFSET * scale )
 
         ang = EyeAngles()
         RotateAroundAxis( ang, Forward( ang ),    90 )
@@ -89,7 +91,7 @@ hook.Add( "PostPlayerDraw", "core.ui.3d2d.player", function( ply, flags )
         2 - (distance / DISTANCE_SQUARED) * 2
     )
 
-    Start3D2D( pos, ang, 0.1 )
+    Start3D2D( pos, ang, 0.1 * scale )
         if alpha then SetAlphaMultiplier( alpha ) end
 
         SimpleTextShadowed( nick, FONT_NICK, 0, -24, color_white, TEXT_ALIGN_CENTER, nil, FONT_NICK_SHADOW )

@@ -955,10 +955,6 @@ do
 
 		hook.Add( 'EntityRemoved', 'PerformantRender:PointCamerasCompat', function( pEntity, bFullUpdate )
 
-			if ( bFullUpdate ) then
-				return
-			end
-
 			if ( GetClass( pEntity ) == 'point_camera' ) then
 				table.RemoveByValue( PerformantRender.g_PointCamerasList, pEntity )
 			end

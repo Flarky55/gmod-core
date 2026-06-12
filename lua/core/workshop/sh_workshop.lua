@@ -64,12 +64,12 @@ if SERVER then
     insert( DEFAULT, "3542644649" ) -- GShader Library
     insert( DEFAULT, "3389728250" ) -- Glide // Styled's Vehicle Base
     insert( DEFAULT, "3613807148" ) -- Glide Extension // Ремень Безопасности
-    insert( DEFAULT, "2588031232" ) -- [TacRP] Tactical RP Weapons
+    insert( DEFAULT, "3739996587" ) -- [TacRP] Tactical RP Weapons
     insert( DEFAULT, "2837856621" ) -- [LSCS] - Lightsaber - Force Powers
     insert( DEFAULT, "546392647" )  -- Media Player
     insert( DEFAULT, "104691717" )  -- PAC3
     insert( DEFAULT, "2799307109" ) -- Custom Chat
-    -- data_static/ 
+    -- data_static/
     --  Lua just loading earlier
     insert( DEFAULT, "3626277245" ) -- Animated Avatars!
     -- animations are bad with lazy loading too
@@ -104,7 +104,7 @@ if SERVER then
     insert( LAZY, "737640184" )     -- Tank Track Tool
     insert( LAZY, "3066780663" )    -- Wiremod Canary
     insert( LAZY, "246756300" )     -- 3D Stream Radio
-    insert( LAZY, "3102297293" )    -- [TacRP] Iron Curtain Weapons Pack
+    insert( LAZY, "3734728497" )    -- [TacRP] Iron Curtain Weapons Pack
     -- fatass models
     insert( LAZY, "1089287594" )    -- Russian road signs Ultimate
     insert( LAZY, "3140746840" )    -- stpM64's Prop Pack
@@ -149,5 +149,5 @@ if SERVER then
 else
     for _, data in ipairs( OPTIONAL ) do
         resource.AddWorkshopOptional( data.wsid, data )
-    end 
+    end
 end

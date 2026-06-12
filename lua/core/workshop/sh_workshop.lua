@@ -64,7 +64,7 @@ if SERVER then
     insert( DEFAULT, "3542644649" ) -- GShader Library
     insert( DEFAULT, "3389728250" ) -- Glide // Styled's Vehicle Base
     insert( DEFAULT, "3613807148" ) -- Glide Extension // Ремень Безопасности
-    insert( DEFAULT, "3739996587" ) -- [TacRP] Tactical RP Weapons
+    insert( DEFAULT, "3734712166" ) -- [TacRP] Tactical RP Weapons
     insert( DEFAULT, "2837856621" ) -- [LSCS] - Lightsaber - Force Powers
     insert( DEFAULT, "546392647" )  -- Media Player
     insert( DEFAULT, "104691717" )  -- PAC3

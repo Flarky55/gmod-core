@@ -31,7 +31,7 @@ do
 
         "gamemode/sh_gamemode.lua",
         "gamemode/sv_gamemode.lua",
-        
+
         "patches/sh_entities.lua",
         "patches/sh_maps.lua",
         "patches/sv_maps_doors.lua",
@@ -42,7 +42,7 @@ do
         "cl_spawnlist.lua",
         "cl_settings.lua",
         "cl_localization_stub.lua",
-        
+
     } )
 
     loader.AutoDir( "core/interface" )

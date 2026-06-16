@@ -50,7 +50,7 @@ local function PopulateToolMenu()
     }
 
 
-    spawnmenu.AddToolMenuOption( "Utilities", "User", "core", "#spawnemnu.category.core", nil, nil, function( cpanel )
+    spawnmenu.AddToolMenuOption( "Utilities", "User", "core", "#spawnemnu.utilities.addonsettings", nil, nil, function( cpanel )
         for _, entry in ipairs( Settings ) do
             local form = vgui.Create( "DForm", cpanel )
             form:SetLabel( entry.Name )

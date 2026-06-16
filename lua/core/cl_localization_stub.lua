@@ -1,6 +1,7 @@
 util.ParseProperties([[
 // Spawnemnu
 spawnemnu.category.core=C.O.R.E.
+spawnmenu.utilities.addonsettings=Настройки дополнений
 
 // Tool - NeoWeld
 tool.neoweld.name=NeoWeld

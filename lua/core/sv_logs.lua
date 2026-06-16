@@ -47,15 +47,15 @@ list.Set( "ServerLogs", "player_connect", function( fnLog, data )
     local address = data.address
 
     -- https://www.youtube.com/watch?v=QYyMLXq_SSo
-    webapi.ipapi.GetAll( string.match( data.address, "(.+):" ), 
+    webapi.ipapi.GetAll( string.match( data.address, "(.+):" ),
         function( result )
             fnLog( ServerLog_FormatPlayerString( name, userid, networkid ) .. " connected, address \"" .. address .. "\" (" .. result.city .. ", " .. result.country .. ")"  )
-        end, 
+        end,
         function( err )
-            ErrorNoHalt( string.format( "ServerLog: failed to fetch '%s' data: %s", address, err ), "\n" )
-        
+            ErrorNoHalt( string.format( "ServerLog: failed to fetch ip info ('%s'): %s", address, err ), "\n" )
+
             fnLog( ServerLog_FormatPlayerString( name, userid, networkid ) .. " connected, address \"" .. address .. "\"", false )
-        end 
+        end
     )
 end )
 
@@ -65,6 +65,6 @@ list.Set( "ServerLogs", "player_disconnect", function( _, data )
 
     local name, userid, networkid = data.name, data.userid, data.networkid
     local reason = data.reason
-    
+
     return ServerLog_FormatPlayerString( name, userid, networkid ) .. " disconnected (reason \"" .. reason .. "\")", false
 end )

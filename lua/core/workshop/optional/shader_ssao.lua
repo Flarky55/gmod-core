@@ -3,14 +3,14 @@ return {
     wsid = "3453258660",
     category = "#optionaladdons.category.shader",
     onLoaded = function()
-        local fn = (hook.GetTable()["PostCEFCodecFixStatus"] or {})["SSAOPlus"]
-        if fn == nil then 
+        local fn = (hook.GetTable()["PostCEFCodecFixStatus"] or {})["SSAO"]
+        if fn == nil then
             ErrorNoHalt( "Failed to load SSAO+: init function not found", "\n" )
-            return 
+            return
         end
 
         fn()
-        
+
         RunConsoleCommand( "spawnmenu_reload" )
     end,
 }

@@ -13,5 +13,15 @@ function GM:PlayerSpawn( ply, transition )
     BaseClass.BaseClass.PlayerSpawn( self, ply, transition )
 end
 
+function GM:PlayerInitialSpawn( ply, transition )
+    local team = self.GetUserGroupTeam( ply:GetUserGroup() )
+    if team == nil then
+        ErrorNoHalt( string.format( "Player %s has usergroup %s with no associated team!", ply:Name(), ply:GetUserGroup() ), "\n" )
+        return
+    end
+
+    ply:SetTeam( self.GetUserGroupTeamIndex( team.Index ) )
+end
+
 -- Disables the high pitched ringing sound effect.
 function GM:OnDamagedByExplosion() end

@@ -124,6 +124,8 @@ else
     insert( OPTIONAL, { wsid = "3555378834", category = "#optionaladdons.category.shader", onLoaded = function() RunConsoleCommand( "spawnmenu_reload" ) end } ) -- FXAA Shader
     insert( OPTIONAL, { wsid = "3455761038", category = "#optionaladdons.category.shader", onLoaded = function() RunConsoleCommand( "spawnmenu_reload" ) end } ) -- SMAA Shader
     insert( OPTIONAL, { wsid = "3453386337", category = "#optionaladdons.category.shader", onLoaded = function() RunConsoleCommand( "spawnmenu_reload" ) end } ) -- Volumetric Clouds Shader
+    insert( OPTIONAL, { wsid = "3730026700", category = "#optionaladdons.category.shader", onLoaded = function() RunConsoleCommand( "spawnmenu_reload" ) end } ) -- Contrast Adaptive Sharpening (AMD FidelityFX CAS)
+    insert( OPTIONAL, { wsid = "3644677720", category = "#optionaladdons.category.shader", onLoaded = function() RunConsoleCommand( "spawnmenu_reload" ) end } ) -- Sharpness Shader
 
     insert( OPTIONAL, { wsid = "3107793296", category = "#optionaladdons.category.dermaskin" } ) -- Luna Blue Derma Skin | Windows XP Visual Style
     insert( OPTIONAL, { wsid = "2972603323", category = "#optionaladdons.category.dermaskin" } ) -- GMod98 UI Skin - Win98 Style UI

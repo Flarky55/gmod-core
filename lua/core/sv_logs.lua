@@ -52,7 +52,7 @@ list.Set( "ServerLogs", "player_connect", function( fnLog, data )
             fnLog( ServerLog_FormatPlayerString( name, userid, networkid ) .. " connected, address \"" .. address .. "\" (" .. result.city .. ", " .. result.country .. ")"  )
         end,
         function( err )
-            ErrorNoHalt( string.format( "ServerLog: failed to fetch ip info ('%s'): %s", address, err ), "\n" )
+            ErrorNoHalt( string.format( "ServerLog: failed to fetch '%s': %s", address, err ), "\n" )
 
             fnLog( ServerLog_FormatPlayerString( name, userid, networkid ) .. " connected, address \"" .. address .. "\"", false )
         end

@@ -1,65 +1,69 @@
 util.ParseProperties([[
-// Spawnemnu
-spawnemnu.category.core=C.O.R.E.
-spawnmenu.utilities.addonsettings=Настройки дополнений
+    // Spawnemnu
+    spawnemnu.category.core=C.O.R.E.
+    spawnemnu.utilities.addonsettings=Настройки дополнений
 
-// Tool - NeoWeld
-tool.neoweld.name=NeoWeld
-tool.neoweld.desc=Сваривает несколько объектов за раз, оптимально
-tool.neoweld.left=Выделить объекты
-tool.neoweld.left_use=Выделить объекты в радиусе
-tool.neoweld.right=Сварить выделенные объекты друг с другом
-tool.neoweld.right_use=Сварить выделенные объекты с миром
-tool.neoweld.reload=Снять выделение
+    // Tool - NeoWeld
+    tool.neoweld.name=NeoWeld
+    tool.neoweld.desc=Сваривает несколько объектов за раз, оптимально
+    tool.neoweld.left=Выделить объекты
+    tool.neoweld.left_use=Выделить объекты в радиусе
+    tool.neoweld.right=Сварить выделенные объекты друг с другом
+    tool.neoweld.right_use=Сварить выделенные объекты с миром
+    tool.neoweld.reload=Снять выделение
 
-tool.neoweld.do_weld=Сварить
-tool.neoweld.do_nocollide=Отключить столкновение
-tool.neoweld.select_radius=Радиус выделения
-tool.neoweld.bound_scale=Масштаб определения пары
+    tool.neoweld.do_weld=Сварить
+    tool.neoweld.do_nocollide=Отключить столкновение
+    tool.neoweld.select_radius=Радиус выделения
+    tool.neoweld.bound_scale=Масштаб определения пары
 
-// Tool - Unbreakable
-tool.unbreakable.name=Неразрушимость
-tool.unbreakable.desc=Делает объекты неразрушаемыми
-tool.unbreakable.left=Сделать объект неразрушаемым
-tool.unbreakable.right=Восстановить прежнее состояние объекта
-tool.unbreakable.reload=Сделать объект и все объекты, что с ним связаны, неразрушаемыми
+    // Tool - Unbreakable
+    tool.unbreakable.name=Неразрушимость
+    tool.unbreakable.desc=Делает объекты неразрушаемыми
+    tool.unbreakable.left=Сделать объект неразрушаемым
+    tool.unbreakable.right=Восстановить прежнее состояние объекта
+    tool.unbreakable.reload=Сделать объект и все объекты, что с ним связаны, неразрушаемыми
 
-// Settings
-core.settings.category.misc=Разное
-core.settings.category.smooth_noclip=Плавный ноуклип
-core.settings.category.mute_toolgun=Тихий тулган
+    // Settings
+    core.settings.category.misc=Разное
+    core.settings.category.thirdperson=Третье лицо
+    core.settings.category.smooth_noclip=Плавный ноуклип
+    core.settings.category.mute_toolgun=Тихий тулган
 
-core.settings.enabled=Включено
+    core.settings.enabled=Включено
 
-core.settings.cl_thirdperson_enable=Третье лицо
-core.settings.performantrender_enable=Производительный рендер
-core.settings.performantrender_enable.help=Рендерит объекты, видимые только в поле зрения игрока.\nБывает нестабильным при большом количестве энтити и низком FPS. Если наблюдаются значительные проблемы с отрисовкой - рекомендуется оставить отключенным.
-core.settings.cl_autojump=Авто-прыжок
-core.settings.smooth_noclip_crouch_default=Обычное поведение присяда
-core.settings.cl_toolgun_sound=Звук
-core.settings.cl_toolgun_effects=Эффект
+    core.settings.performantrender_enable=Производительный рендер
+    core.settings.performantrender_enable.help=Рендерит объекты, видимые только в поле зрения игрока.\nБывает нестабильным при большом количестве энтити и низком FPS. Если наблюдаются значительные проблемы с отрисовкой - рекомендуется оставить отключенным.
+    core.settings.cl_autojump=Авто-прыжок
+    core.settings.smooth_noclip_crouch_default=Обычное поведение присяда
+    core.settings.cl_toolgun_sound=Звук
+    core.settings.cl_toolgun_effects=Эффект
+    core.settings.cl_thirdperson_fpaiming=Прицел от первого лица
+    core.settings.cl_thirdperson_offset_distance=Расстояние
+    core.settings.cl_thirdperson_offset_horizontal=Смещение по горизонтали
+    core.settings.cl_thirdperson_offset_vertical=Смещение по вертикали
+    core.settings.cl_thirdperson_switchshoulder=Смена плеча
 
-// Scoreboard
-core.scoreboard.links.addons=Аддоны
-core.scoreboard.links.github=GitHub
+    // Scoreboard
+    core.scoreboard.links.addons=Аддоны
+    core.scoreboard.links.github=GitHub
 
-core.scoreboard.info.map=Карта
-core.scoreboard.info.players=Игроки
-core.scoreboard.info.uptime=UpTime
-core.scoreboard.info.tps=TPS
-core.scoreboard.info.tps.tip=Ticks Per Second\nКоличество тиков, обрабатываемых сервером в течение одной секунды.
-core.scoreboard.info.entities=Энтити
-core.scoreboard.info.entities.tip=Количество всех сущностей (Entity), существующих на клиенте.
+    core.scoreboard.info.map=Карта
+    core.scoreboard.info.players=Игроки
+    core.scoreboard.info.uptime=UpTime
+    core.scoreboard.info.tps=TPS
+    core.scoreboard.info.tps.tip=Ticks Per Second\nКоличество тиков, обрабатываемых сервером в течение одной секунды.
+    core.scoreboard.info.entities=Энтити
+    core.scoreboard.info.entities.tip=Количество всех сущностей (Entity), существующих на клиенте.
 
-core.scoreboard.player.nick=Никнейм
-core.scoreboard.player.gamemode=Режим игры
-core.scoreboard.player.ping=Пинг
+    core.scoreboard.player.nick=Никнейм
+    core.scoreboard.player.gamemode=Режим игры
+    core.scoreboard.player.ping=Пинг
 
-// Map Tags
-maptag.snow=Снег
-maptag.day=День
-maptag.night=Ночь
-
+    // Map Tags
+    maptag.snow=Снег
+    maptag.day=День
+    maptag.night=Ночь
 
 // Optional Addons
 spawnmenu.utilities.optionaladdons=Опциональные дополнения

@@ -1,37 +1,83 @@
-local function PopulateToolMenu()
-    local DForm = vgui.GetControlTable( "DForm" )
+local function Init_CheckBox( form, label, cvar )
+    return form:CheckBox( label, cvar:GetName() )
+end
 
+local function Init_NumSlider( form, label, cvar )
+    return form:NumSlider( label, cvar:GetName(), cvar:GetMin(), cvar:GetMax() )
+end
+
+local function Init_KeyBinder( form, label, cvar )
+    local binder = vgui.Create( "CtrlNumPad", form )
+
+    binder:SetLabel1( label )
+    binder:SetConVar1( cvar:GetName() )
+
+    form:AddItem( binder, nil )
+
+    return binder
+end
+
+
+local function PopulateToolMenu()
     local Settings = {
         {
             Name = "#core.settings.category.misc",
             {
-                Name = "#core.settings.cl_thirdperson_enable",
-                ConVar = "cl_thirdperson_enable",
-                Init = DForm.CheckBox
-            },
-            {
                 Name = "#core.settings.performantrender_enable",
                 Help = "#core.settings.performantrender_enable.help",
                 ConVar = "performantrender_enable",
-                Init = DForm.CheckBox
+                Init = Init_CheckBox
             },
             {
                 Name = "#core.settings.cl_autojump",
                 ConVar = "cl_autojump",
-                Init = DForm.CheckBox
+                Init = Init_CheckBox
             }
+        },
+        {
+            Name = "#core.settings.category.thirdperson",
+            {
+                Name = "#core.settings.enabled",
+                ConVar = "cl_thirdperson_enable",
+                Init = Init_CheckBox
+            },
+            {
+                Name = "#core.settings.cl_thirdperson_fpaiming",
+                ConVar = "cl_thirdperson_fpaiming",
+                Init = Init_CheckBox
+            },
+            {
+                Name = "#core.settings.cl_thirdperson_offset_distance",
+                ConVar = "cl_thirdperson_offset_distance",
+                Init = Init_NumSlider
+            },
+            {
+                Name = "#core.settings.cl_thirdperson_offset_horizontal",
+                ConVar = "cl_thirdperson_offset_horizontal",
+                Init = Init_NumSlider
+            },
+            {
+                Name = "#core.settings.cl_thirdperson_offset_vertical",
+                ConVar = "cl_thirdperson_offset_vertical",
+                Init = Init_NumSlider
+            },
+            {
+                Name = "#core.settings.cl_thirdperson_switchshoulder",
+                ConVar = "cl_thirdperson_switchshoulder",
+                Init = Init_KeyBinder
+            },
         },
         {
             Name = "#core.settings.category.smooth_noclip",
             {
                 Name = "#core.settings.enabled",
                 ConVar = "smooth_noclip",
-                Init = DForm.CheckBox
+                Init = Init_CheckBox
             },
             {
                 Name = "#core.settings.smooth_noclip_crouch_default",
                 ConVar = "smooth_noclip_crouch_default",
-                Init = DForm.CheckBox
+                Init = Init_CheckBox
             },
         },
         {
@@ -39,12 +85,12 @@ local function PopulateToolMenu()
             {
                 Name = "#core.settings.cl_toolgun_sound",
                 ConVar = "cl_toolgun_sound",
-                Init = DForm.CheckBox
+                Init = Init_CheckBox
             },
             {
                 Name = "#core.settings.cl_toolgun_effects",
                 ConVar = "cl_toolgun_effects",
-                Init = DForm.CheckBox
+                Init = Init_CheckBox
             },
         },
     }
@@ -58,7 +104,7 @@ local function PopulateToolMenu()
             cpanel:AddItem( form )
 
             for _, setting in ipairs( entry ) do
-                setting.Init( form, setting.Name, setting.ConVar )
+                setting.Init( form, setting.Name, GetConVar( setting.ConVar ) )
 
                 if setting.Help then form:ControlHelp( setting.Help ) end
             end
@@ -67,5 +113,6 @@ local function PopulateToolMenu()
 end
 
 
-if vgui.Exists( "DForm" ) then PopulateToolMenu() end
+PopulateToolMenu()
+
 hook.Add( "PopulateToolMenu", "core.settings", PopulateToolMenu )

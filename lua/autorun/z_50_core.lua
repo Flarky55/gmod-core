@@ -6,25 +6,25 @@ core = core or {}
 local Print; do
     local color_name = Color( 39, 174, 96 )
 
-    Print = function(...)
-        MsgC(color_white, "[", color_name, "core", color_white, "] ", ...)
+    Print = function( ... )
+        MsgC( color_white, "[", color_name, "core", color_white, "] ", ... )
         MsgN()
     end
 end
 core.Print = Print
 
 
-Print("Loading...")
+Print( "Loading..." )
 
 local time_start = SysTime()
 do
-    include( "core_extensions.lua" )
     include( "lzwd.lua" )
 
     loader.AutoList( "core", {
 
         "sh_globals.lua",
         "sv_logs.lua",
+        "sv_discord.lua",
 
         "workshop/sv_workshop_watchdog.lua",
         "workshop/sh_workshop.lua",

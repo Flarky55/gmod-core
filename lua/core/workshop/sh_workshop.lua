@@ -119,6 +119,7 @@ if SERVER then
     insert( LAZY, "430453978" )     -- ZONA Stalker Props Pack [4/4]
 else
     insert( OPTIONAL, { wsid = "1983329448" } ) -- Better Icons16
+    insert( OPTIONAL, { wsid = "3495129511" } ) -- GUI Scaler (Fix Small Spawnmenu)
 
     insert( OPTIONAL, { wsid = "3556046077", category = "#optionaladdons.category.shader", onLoaded = function() RunConsoleCommand( "spawnmenu_reload" ) end } ) -- Physically Based Bloom (Shader)
     insert( OPTIONAL, { wsid = "3555378834", category = "#optionaladdons.category.shader", onLoaded = function() RunConsoleCommand( "spawnmenu_reload" ) end } ) -- FXAA Shader

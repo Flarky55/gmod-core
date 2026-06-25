@@ -46,11 +46,11 @@ local HUD = {
 
     Think = function( self )
         if not IsValid( lply ) then return end
-    
+
         do
             local panel = self.m_pArmor
             local value = Armor( lply )
-            
+
             local visible = value > 0
 
             if visible ~= panel:IsVisible() then

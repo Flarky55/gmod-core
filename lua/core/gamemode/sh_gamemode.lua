@@ -68,9 +68,9 @@ end
 
 hook.Add( "EntityNetworkedVarChanged", "core.gamemode", function( ent, name, oldValue, newValue )
     if name ~= KEY then return end
-    
+
     local fullUpdate = oldValue == nil
-    
+
     local oldGm = GetGamemode( ent )
 
     if not fullUpdate or oldGm == MODE_UNKNOWN then

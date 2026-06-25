@@ -93,6 +93,34 @@ local function PopulateToolMenu()
                 Init = Init_CheckBox
             },
         },
+        {
+            Name = "#core.settings.category.character",
+            {
+                Name = "#core.settings.cl_character_sound",
+                ConVar = "cl_character_sound",
+                Init = Init_CheckBox,
+            },
+            {
+                Name = "#core.settings.cl_character_sound_footsteps",
+                ConVar = "cl_character_sound_footsteps",
+                Init = Init_CheckBox,
+            },
+            {
+                Name = "#core.settings.cl_character_sound_death",
+                ConVar = "cl_character_sound_death",
+                Init = Init_CheckBox,
+            },
+            {
+                Name = "#core.settings.cl_character_sound_damage",
+                ConVar = "cl_character_sound_damage",
+                Init = Init_CheckBox,
+            },
+            {
+                Name = "#core.settings.cl_character_sound_kill",
+                ConVar = "cl_character_sound_kill",
+                Init = Init_CheckBox,
+            },
+        },
     }
 
 

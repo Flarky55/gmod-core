@@ -80,6 +80,8 @@ if SERVER then
     insert( DEFAULT, "2247494212" ) -- [WOS] Standard Sword Art
     insert( DEFAULT, "3166246769" ) -- [xdR/wOS] uTaunt - Team Fortress 2
     insert( DEFAULT, "3161530501" ) -- [xdR] uTaunt - Fortnite Taunts ( Custom Taunt )
+    insert( DEFAULT, "2912631064" ) -- Female Sit Animation [xdR]
+    insert( DEFAULT, "3554302778" ) -- [xdR]talking_sit by mixamo
 
     --[[
             Lazy loading

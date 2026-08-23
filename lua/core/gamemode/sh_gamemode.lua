@@ -109,7 +109,9 @@ if SERVER then
 end
 
 hook.Add( "PlayerNoClip", "core.gamemode", function( ply, desiredState )
-    if desiredState == false then return end
+    if desiredState == false
+        or ply:HasPermission( "can_noclip" )
+    then return end
 
     local gm = GetGamemode( ply )
 

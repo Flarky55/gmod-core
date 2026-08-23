@@ -25,6 +25,7 @@ do
         "sh_globals.lua",
         "sv_logs.lua",
         "sv_discord.lua",
+        "sv_hostname.lua",
 
         "workshop/sv_workshop_watchdog.lua",
         "workshop/sh_workshop.lua",

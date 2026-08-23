@@ -48,7 +48,7 @@ local function ResolveFilterType(val, typefilter)
         end
     end
 
-    if table.IsEmpty(es) then 
+    if table.IsEmpty(es) then
         return nil, "no entities with correct type; "..err
     end
 

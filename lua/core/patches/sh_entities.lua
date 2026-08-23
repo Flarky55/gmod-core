@@ -47,14 +47,14 @@ local PATCHES_DYNAMIC_COUNT = #PATCHES_DYNAMIC
 local patch = function( tbl, class )
     for i = 1, PATCHES_DYNAMIC_COUNT do
         local data = PATCHES_DYNAMIC[i]
-        
+
         if data.checkclass( tbl, class ) then
-            data.func( tbl, class )    
+            data.func( tbl, class )
         end
     end
 
     local func = PATCHES[class]
-    if func ~= nil then 
+    if func ~= nil then
         func( tbl, class )
     end
 end

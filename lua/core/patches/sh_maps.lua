@@ -14,7 +14,7 @@ local function populate( root, filename, fnInclude )
 
         MapPatchData {
             patch: function
-            filename: string | nil     
+            filename: string | nil
         }
     --]]
     local value = fnInclude( filepath )
@@ -31,13 +31,13 @@ populate( ROOT .. "server/", FILENAME, loader.Server )
 populate( ROOT .. "client/", FILENAME, loader.Client )
 populate( ROOT, FILENAME, loader.Shared )
 
-if #PATCHES == 0 then return end 
+if #PATCHES == 0 then return end
 
 
 local patch = function()
     for i = 1, #PATCHES do
         local func = PATCHES[i]
-        
+
         if func then
             func()
         end

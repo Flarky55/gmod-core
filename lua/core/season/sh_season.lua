@@ -2,10 +2,10 @@ local ROOT = file.CurrentDir() .. "scripts/"
 
 local is_event_active = function(dateData)
     local date = os.date("*t")
-    
+
     for k, v in pairs(dateData) do
         local current = date[k]
-    
+
         if istable(v) then
             if not math.IsInRange(current, v[1], v[2]) then
                 return false
@@ -22,7 +22,7 @@ end
 
 local SEASONS = {
     -- TODO: block map change when new year's eve
-    ["new_year"] = is_event_active({ yday = {365 - 14,  366} }) 
+    ["new_year"] = is_event_active({ yday = {365 - 14,  366} })
                 or is_event_active({ yday = {1,         14} }),
 
     ["birthday_flarky"] = is_event_active({ month = 4, day = 30 }),

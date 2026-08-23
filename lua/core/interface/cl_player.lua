@@ -55,7 +55,7 @@ local AttachmentHeadPos; do
 
     AttachmentHeadPos = function( ply )
         local pos = AttachmentPos( ply, NAMES[GetModel( ply )] or "anim_attachment_head" )
-        
+
         if pos == nil then
             pos = GetPos( ply )
             Add( pos, V_HEIGHT_OFFSET )
@@ -96,7 +96,7 @@ hook.Add( "PostPlayerDraw", "core.ui.3d2d.player", function( ply, flags )
 
         SimpleTextShadowed( nick, FONT_NICK, 0, -24, color_white, TEXT_ALIGN_CENTER, nil, FONT_NICK_SHADOW )
         SimpleTextShadowed( gm.Name, FONT_NICK, 0, 24, color_white, TEXT_ALIGN_CENTER, nil, FONT_NICK_SHADOW )
-    
+
         if alpha then SetAlphaMultiplier( 1 ) end
     End3D2D()
 end )

@@ -74,11 +74,6 @@ local News = {
         Text = "я схожу с ума\nlorem ipsum dolor sit amet.",
     },
     {
-        Name = "FRAUD TOMORROW",
-        Author = "Flarky Prime",
-        Text = "Fraud ещё не вышел, а может вышел. Это пока ещё не динамическая новость."
-    },
-    {
         Name = "ВНИМАНИЕ! РОЗЫСК!",
         Author = "[ДАННЫЕ УДАЛЕНЫ]",
         Text = "Разыскивается ВОР АРБРУЗОВ!\nПриметы:\n - чёрный.\n - ворует арбрузы.\nПросьба любую информацию сообщать местным властям!"
@@ -171,7 +166,7 @@ vgui.RegisterTable( PLAYER_PROPERTIES, "DPanel" )
 
 
 --[[
-        Player Line (Valid Entity) 
+        Player Line (Valid Entity)
 --]]
 local PLAYER_LINE = {
     Init = function( self )
@@ -186,7 +181,7 @@ local PLAYER_LINE = {
         avatar:SetMouseInputEnabled( false )
         self.m_pAvatar = avatar
 
-        
+
         local container = self:Add( "Panel" )
         container:Dock( FILL )
         container:SetMouseInputEnabled( false )
@@ -204,7 +199,7 @@ local PLAYER_LINE = {
             end
         end
 
-        
+
         local mute = self:Add( "DCheckBox" )
         mute:Dock( RIGHT )
         mute.Paint = nil
@@ -261,8 +256,8 @@ local PLAYER_LINE = {
 
     Update = function( self )
         local ply = self.Player
-        if not IsValid( ply ) then 
-            self:Remove() 
+        if not IsValid( ply ) then
+            self:Remove()
             return
         end
 
@@ -295,7 +290,7 @@ local PLAYER_LINE_CONNECTING = {
         DButton.Paint( self, w, h )
         surface.SetAlphaMultiplier( 1 )
     end,
-    
+
     Setup = function( self, data )
 
     end,
@@ -355,7 +350,7 @@ local SCORE_BOARD = {
                     lblTitle:SetFont( FONT_Comfortaa24 )
                     lblTitle:SetText( entry.Name )
                     lblTitle:SizeToContents()
-                    
+
                     local lblValue = button:Add( "DLabel" )
                     lblValue:Dock( RIGHT )
                     lblValue:SetDark( true )
@@ -365,7 +360,7 @@ local SCORE_BOARD = {
 
                     if UpdateTime then
                         local nextThink = 0
-                        
+
                         lblValue.Think = function( s )
                             if nextThink > CurTime() then return end
                             nextThink = CurTime() + UpdateTime
@@ -426,7 +421,7 @@ local SCORE_BOARD = {
                 end
             end
         end
-        
+
 
         local container = self:Add( "DPanel" )
         container:Dock( TOP )
@@ -487,15 +482,15 @@ local SCORE_BOARD = {
 
     Think = function( self )
         if self._NextThink and self._NextThink > CurTime() then return end
-        self._NextThink = CurTime() + 5 
+        self._NextThink = CurTime() + 5
 
         local scrollpanel_cv = self.m_pPlayerList:GetCanvas()
-        
+
         for i = 1, scrollpanel_cv:ChildCount() do
             local panel = scrollpanel_cv:GetChild( i-1 )
-            
+
             panel:Update()
-        end        
+        end
     end,
 
     Update = function( self )
@@ -545,7 +540,7 @@ end
 
 
 local function Reload()
-    if IsValid( g_Scoreboard ) then 
+    if IsValid( g_Scoreboard ) then
         g_Scoreboard:Remove()
     end
 end

@@ -4,13 +4,13 @@ return {
     category = "#optionaladdons.category.shader",
     onLoaded = function()
         local fn = (hook.GetTable()["InitPostShaderlib"] or {})["ContactShadows"]
-        if fn == nil then 
+        if fn == nil then
             ErrorNoHalt( "Failed to load Contact Shadows: init function not found", "\n" )
-            return 
+            return
         end
 
         fn()
 
         RunConsoleCommand( "spawnmenu_reload" )
-    end
+    end,
 }

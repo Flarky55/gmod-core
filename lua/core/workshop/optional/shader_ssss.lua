@@ -4,13 +4,13 @@ return {
     category = "#optionaladdons.category.shader",
     onLoaded = function()
         local fn = (hook.GetTable()["PostCEFCodecFixStatus"] or {})["SSSS"]
-        if fn == nil then 
+        if fn == nil then
             ErrorNoHalt( "Failed to load SSSS: init function not found", "\n" )
-            return 
+            return
         end
 
         fn()
-        
+
         RunConsoleCommand( "spawnmenu_reload" )
-    end
+    end,
 }

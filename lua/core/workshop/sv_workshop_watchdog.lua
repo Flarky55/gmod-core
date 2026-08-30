@@ -31,7 +31,9 @@ resource.AddWorkshop = injector.replace( resource.AddWorkshop, function( fnOrigi
 end )
 
 local function AddFile( fnOriginal, path )
-    if DISABLE_FILE[path] then return end
+    if DISABLE_FILE[path]
+        or string.find( path, "stormfox" )
+    then return end
 
     fnOriginal( path )
 end

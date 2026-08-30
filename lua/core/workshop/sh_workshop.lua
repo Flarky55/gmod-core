@@ -69,6 +69,7 @@ if SERVER then
     insert( DEFAULT, "546392647" )  -- Media Player
     insert( DEFAULT, "104691717" )  -- PAC3
     insert( DEFAULT, "2799307109" ) -- Custom Chat
+    insert( DEFAULT, "2447979470" ) -- StormFox 2 Content
     -- data_static/
     --  Lua just loading earlier
     insert( DEFAULT, "3626277245" ) -- Animated Avatars!

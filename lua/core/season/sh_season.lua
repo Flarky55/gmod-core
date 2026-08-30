@@ -38,7 +38,7 @@ end
 for dirname, active in pairs(SEASONS) do
     if not active then continue end
 
-    core.Print( "Loading active season: ", Color(0, 255, 0), dirname, color_white, "!" )
+    core.Msg( "Loading active season: ", Color(0, 255, 0), dirname, color_white, "!" )
 
     local path = ROOT .. dirname .. "/"
 

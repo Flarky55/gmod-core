@@ -47,7 +47,7 @@ do
             return
         end
 
-        hook.Run( "core.discord:" .. message.name, message )
+        hook.Run( "core.discord:" .. message.name, self, message )
     end
 
     function WebSocket:onError( err )
@@ -88,13 +88,17 @@ end
 discord.Send = Send
 
 
-hook.Add( "core.discord:chat", "core.discord", function( message )
-    chat.AddText( nil,
-        { blockType = "avatar", blockValue = message.avatarURL },
-        message.username,
-        message.content
-    )
-end )
+do
+    local color_name = Color( 220, 220, 220 )
+
+    hook.Add( "core.discord:chat", "core.discord", function( ws, message )
+        chat.AddText( nil,
+            { blockType = "avatar", blockValue = message.avatarURL },
+            color_name, message.username, color_white, ": ", message.content
+        )
+    end )
+end
+
 
 
 -- Custom Chat exclusive hook

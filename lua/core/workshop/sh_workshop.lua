@@ -97,6 +97,7 @@ if SERVER then
     insert( LAZY, "2675972006" )    -- Custom Loadout
     insert( LAZY, "3389795738" )    -- Glide // GTAV: Helicopters
     insert( LAZY, "3620516732" )    -- Glide // Styled's Experiments
+    insert( LAZY, "3730274033" )    -- Google Pig Mount
     insert( LAZY, "3542961565" )    -- Liberty City // GLIDE
     insert( LAZY, "2656563609" )    -- Musical Keyboard
     insert( LAZY, "2840295308" )    -- Primitive
@@ -107,6 +108,10 @@ if SERVER then
     insert( LAZY, "3066780663" )    -- Wiremod Canary
     insert( LAZY, "246756300" )     -- 3D Stream Radio
     insert( LAZY, "3734728497" )    -- [TacRP] Iron Curtain Weapons Pack
+    insert( LAZY, "3143596223" )    -- CFC Parachutes
+    insert( LAZY, "2389553185" )    -- [GCAL] Arctic's Night Vision
+    insert( LAZY, "764395035" )     -- RPW - Binoculars Pack
+    insert( LAZY, "108170491" )     -- Wowozela
     -- fatass models
     insert( LAZY, "1089287594" )    -- Russian road signs Ultimate
     insert( LAZY, "3140746840" )    -- stpM64's Prop Pack
